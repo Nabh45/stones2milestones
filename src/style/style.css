@@ -1,0 +1,150 @@
+.navigation {
+    background: black;
+    padding: 15px;
+    margin-bottom: 35px;
+}
+
+.navigation-menu {
+    list-style-type: none;
+    display: inline;
+    padding-left: 0px;
+}
+
+.navigation-menu li {
+    display: inline;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.navigation-menu a {
+    color: grey;
+}
+
+.navigation-menu :active {
+    color: white;
+}
+
+.container {
+    max-width: 1186px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading {
+    margin-bottom: 10px;
+}
+
+.noTaskTag {
+    margin-top: 0px;
+}
+
+.taskInputDiv {
+    max-width: 400px;
+    width: 400px;
+    margin-top: 40px;
+}
+
+.taskInputBox {
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 1px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+}
+
+.notesDiv {
+    margin: 40px 0px 20px;
+}
+
+.notesHeading {
+    margin-bottom: 10px;
+}
+
+.linethroughclass {
+    text-decoration: line-through;
+    color: #bbb;
+}
+
+.questionClass {
+    width: 40%;
+    
+}
+
+.dateClass {
+    width: 20%;
+    
+}
+
+.srNo {
+    width: 10%;
+    
+}
+
+.buttonClass {
+    width: 20%;
+    text-align: right;
+}
+
+.buttonStyle {
+    padding: 1px 5px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+    margin-right: 5px;
+}
+
+.btnPrimary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+}
+
+.btnDelete {
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+.Table th tr {
+    border-bottom: 1px solid grey;
+}
+
+.Table {
+    width: 100%;
+}
+
+@media (max-width: 512px) {
+    .taskInputDiv {
+        width: 100%;
+    }
+}
+
+.aboutVueOuter {
+    text-align: center;
+}
+
+.aboutVueUl {
+    padding: 15px;
+    list-style-type: none;
+}
+
+.aboutVueUl li {
+    display: inline;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+.aboutVueUl a {
+    color: #42b983;
+}
+
+.ecosystem {
+    margin: 20px 0;
+}
