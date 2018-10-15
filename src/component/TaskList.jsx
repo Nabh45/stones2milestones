@@ -74,7 +74,7 @@ class TaskList extends React.Component {
         })
     }
 
-    addShowProperty(e, item, index) {
+    addShowProperty(e, index) {
         var temp = this.state.questionsList;
         temp[index].showButton = true;
         this.setState({
@@ -82,7 +82,7 @@ class TaskList extends React.Component {
         })
     }
 
-    removeShowProperty(e, item, index) {
+    removeShowProperty(e, index) {
         var temp = this.state.questionsList;
         delete temp[index].showButton
         this.setState({
@@ -102,36 +102,36 @@ class TaskList extends React.Component {
                 </div>
 
                 {this.state.questionsList &&
-                <div style={{overflow:'auto'}}>
-                    <Table className='borderedResponsiveHover,col-lg-12'>
-                        <thead>
-                            <tr>
-                                <th >#</th>
-                                <th >Description</th>
-                                <th >Timestamp</th>
-                                <th ></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.state.questionsList && this.state.questionsList.map((item, index) => (
-                                <tr key={index} onMouseOver={(e) => this.addShowProperty(e,item,index)} onMouseOut={(e) => this.removeShowProperty(e,item,index)}>
-                                    <td className={item.marked ? 'linethroughclass' : 'srNo'}>{index + 1}</td>
-                                    <td className={item.marked ? 'linethroughclass' : 'questionClass'}>{item.question}</td>
-                                    <td className={item.marked ? 'linethroughclass' : 'dateClass'}>{item.createdDate}</td>
-
-                                    <td className='buttonClass'>
-                                         {(!item.marked) && (item.showButton) &&
-                                            <button className='buttonStyle btnPrimary' onClick={(e) => this.handleMarkAsDoneClick(e, index)}>Mark as Done</button>
-                                         }
-                                        {item.showButton && 
-                                            <button className='buttonStyle btnDelete' onClick={(e) => this.handleDeleteTask(e, index)}>Delete</button>
-                                        }
-                                    </td>
+                    <div className='tableDiv'>
+                        <Table>
+                            <thead>
+                                <tr>
+                                    <th >#</th>
+                                    <th >Description</th>
+                                    <th >Timestamp</th>
+                                    <th ></th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </Table>
-                            </div>
+                            </thead>
+                            <tbody>
+                                {this.state.questionsList && this.state.questionsList.map((item, index) => (
+                                    <tr key={index} onMouseEnter={(e) => this.addShowProperty(e, index)} onMouseLeave={(e) => this.removeShowProperty(e, index)}>
+                                        <td className={item.marked ? 'linethroughclass' : 'srNo'}>{index + 1}</td>
+                                        <td className={item.marked ? 'linethroughclass' : 'questionClass'}>{item.question}</td>
+                                        <td className={item.marked ? 'linethroughclass' : 'dateClass'}>{item.createdDate}</td>
+
+                                        <td className='buttonClass'>
+                                            {(!item.marked) && (item.showButton) &&
+                                                <button className='buttonStyle btnPrimary' onClick={(e) => this.handleMarkAsDoneClick(e, index)}>Mark as Done</button>
+                                            }
+                                            {item.showButton &&
+                                                <button className='buttonStyle btnDelete' onClick={(e) => this.handleDeleteTask(e, index)}>Delete</button>
+                                            }
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </Table>
+                    </div>
                 }
 
                 <div className='taskInputDiv'>
