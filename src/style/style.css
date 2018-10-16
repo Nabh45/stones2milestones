@@ -11,7 +11,6 @@
 }
 
 .navigation-menu li {
-    display: inline;
     padding-right: 20px;
     cursor: pointer;
 }
@@ -147,4 +146,8 @@
 
 .ecosystem {
     margin: 20px 0;
+}
+
+.tableDiv {
+    width: 1140px;
 }
